@@ -4,6 +4,9 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
+import "bootstrap";
+import "bootstrap/scss/bootstrap.scss";
+
 new Vue({
   store,
   render: h => h(App)

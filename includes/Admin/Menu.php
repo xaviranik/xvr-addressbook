@@ -42,7 +42,7 @@ class Menu {
 		wp_enqueue_style('backend-vue-style');
 		wp_enqueue_script('backend-vue-script');
 
-		echo '<div class="wrap"><div id="app"></div></div>';
+		echo '<div id="app"></div>';
 	}
 
 	public function load_scripts() {
