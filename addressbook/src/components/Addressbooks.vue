@@ -30,8 +30,17 @@
                 <td>{{ item['phone'] }}</td>
                 <td>{{ item['date'] }}</td>
                 <td>
-                  <button class="btn btn-outline-primary mr-2">Edit</button>
-                  <button class="btn btn-outline-danger">Delete</button>
+                  <button
+                    class="btn btn-outline-primary mr-2"
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#addressbook-modal"
+                    @click="openModal"
+                  >Edit</button>
+                  <button
+                    class="btn btn-outline-danger"
+                    @click="deleteAddressbook(item['id'])"
+                  >Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -54,7 +63,7 @@ export default {
   },
   computed: mapGetters(["allAddressbooks"]),
   methods: {
-    ...mapActions(["getAddressbooks"]),
+    ...mapActions(["getAddressbooks", "deleteAddressbook"]),
     openModal() {
       this.showModal = true;
     }
