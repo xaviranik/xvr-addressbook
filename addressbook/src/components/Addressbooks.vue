@@ -8,7 +8,6 @@
           class="btn btn-primary"
           data-toggle="modal"
           data-target="#addressbook-modal"
-          @click="openModal"
         >Add new</button>
       </div>
       <div class="row">
@@ -48,14 +47,19 @@
         </div>
       </div>
     </div>
+    <AddressbookModal />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import AddressbookModal from "@/components/AddressbookModal";
 
 export default {
   name: "Addressbooks",
+  components: {
+    AddressbookModal
+  },
   data() {
     return {
       showModal: false
